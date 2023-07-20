@@ -1,0 +1,71 @@
+@startuml
+
+skinparam ActorBorderColor red
+skinparam ActorFontColor red
+skinparam ArrowColor black
+
+skinparam ArrowFontColor<<depends>> red
+
+rectangle Individual {
+storage "<i>fresh</i> impression" as impression
+storage "inspiration" 
+storage "flash of geniues" as flash #Orange
+storage "fundamental idea" as fundamental #Orange
+storage "creativity" 
+storage "idea" as idea
+storage "composite idea" as composite
+storage "theory"
+storage "invention"
+storage "innovation"
+cloud "intrinsic factors" as intrinsic
+
+intrinsic --> inspiration : boost / block
+
+database "<i>old</i> knowledge" as knowledge {
+    database "ideas" {
+        database "core of\nideas" as core #Orange
+    }
+}
+
+
+inspiration <-l- impression : may give
+inspiration <-- knowledge : may feed
+
+' creativity -u-> mind : of  
+
+inspiration -d-> creativity : leads to
+
+creativity --> theory : III: visionary
+creativity --> invention : II: inventive
+creativity --> innovation : I: innovative
+creativity --> flash : IV: brilliant
+innovation -[hidden]r- invention
+invention -[hidden]r- theory
+
+flash --> fundamental : spawns
+
+fundamental -l-|> idea
+composite -r-|> idea
+theory -d-|> composite
+innovation -d-|> composite
+invention -d-|> composite
+theory -[hidden]r-> invention
+invention -[hidden]r-> innovation 
+
+fundamental -> core : discover potential\nand remember
+composite o-r-> "n" idea
+
+composite <--> ideas : combine existing ideas\nand remember
+' inspiration ---> knowledge : feed by
+' inspiration --> flash : triggers
+}
+
+actor Others 
+cloud "extrinsic factors" as extrinsic 
+
+Others <.r. composite #red <<depends>> : "<<depends>>"
+Others <.. ideas #red <<depends>> : "<<depends>>"
+extrinsic --> inspiration : boost / block
+
+
+@enduml
