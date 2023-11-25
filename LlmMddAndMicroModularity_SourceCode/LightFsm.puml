@@ -1,0 +1,15 @@
+@startuml
+
+[*] --> off : start
+off --> on : turnOn / onAction
+on --> off : turnOff / offAction
+
+state off {
+    off : > entryAction
+}
+
+state on {
+    on : < exitAction
+}
+
+@enduml

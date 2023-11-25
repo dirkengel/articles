@@ -1,0 +1,21 @@
+@startuml
+
+[*] --> off : start
+off --> on : turnOn [blinking=false] / onAction
+off --> blinking : turnOn [blinking=true] / onAction
+on --> off : turnOff / offAction
+blinking --> off : turnOff / offAction
+
+
+state off {
+    off : > entryAction
+}
+
+state on {
+    on : < exitAction
+}
+
+state blinking {
+}
+
+@enduml
