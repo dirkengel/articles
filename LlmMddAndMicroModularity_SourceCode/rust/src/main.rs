@@ -16,8 +16,8 @@ fn main() {
     //light_fsm.fsm.states.get_mut("on").unwrap().entry_action = Some(Box::new(|| println!("entering on state")));
     light_fsm.fsm.states.get_mut("on").unwrap().exit_action = Some(Box::new(|| println!("exiting on state")));
 
-    light_fsm.fsm.transitions.get_mut("turnOn_offStateOnState_0").unwrap().action = Some(Rc::new(|| println!("turning on")));
-    light_fsm.fsm.transitions.get_mut("turnOff_onStateOffState_0").unwrap().action = Some(Rc::new(|| println!("turning off")));
+    light_fsm.fsm.transitions.get_mut("turnOn_off_on").unwrap().action = Some(Rc::new(|| println!("turning on")));
+    light_fsm.fsm.transitions.get_mut("turnOff_on_off").unwrap().action = Some(Rc::new(|| println!("turning off")));
 
     // Simulate events
     light_fsm.turn_on();
