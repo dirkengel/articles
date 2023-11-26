@@ -1,4 +1,4 @@
-// file: fsm.rs
+// file: fsm.rs -> framework code
 
 pub mod fsm {
     use std::collections::HashMap;

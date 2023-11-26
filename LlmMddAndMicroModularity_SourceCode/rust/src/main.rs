@@ -1,4 +1,4 @@
-// file main.rs
+// file main.rs -> test or application code
 
 mod fsm;
 mod light_fsm;

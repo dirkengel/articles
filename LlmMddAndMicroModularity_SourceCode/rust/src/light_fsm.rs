@@ -1,4 +1,4 @@
-// file light_fsm.rs
+// file light_fsm.rs -> generated code
 
 pub mod light_fsm {
     use crate::fsm::fsm::StateMachine;
@@ -37,4 +37,4 @@ pub mod light_fsm {
        }
  
     }
- }
+}
